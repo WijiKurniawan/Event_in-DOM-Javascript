@@ -26,19 +26,28 @@
 </div>
  
 <script>
-  function appear(){//memunculkan elemen html (appearing html content)
-    alert('Html muncul');
-    const contents = document.querySelector('.contents');
-    contents.removeAttribute('hidden');
-  }
-  document.body.onload = appear;//call the on load method
-
   //2 make on click event 
   function increment(){
     document.getElementById('count').innerText++;
+
+  //3 make hidden gift for user when them 7 times  of click button
+    if (document.getElementById('count').innerText == 7) {
+      const hiddenMessage = document.createElement('h4');
+      hiddenMessage = 'Surprise !!!';
+      const image = document.createElement('img');
+      image.setAttribute('src', 'https://i.ibb.co/0V49VRZ/catto.jpg');
+      const contents = document.querySelector('.contents');
+      contents.appendChild(hiddenMessage).appendChild(image);
+    }
+  }
+  function appear(){//1 memunculkan elemen html (appearing html content)
+    alert('Hi dude');
+    const contents = document.querySelector('.contents');
+    contents.removeAttribute('hidden');
   }
   //2.1 adding the event handler
   document.getElementById('incrementButton').onclick = increment;
+  document.body.onload = appear;//call the on load method
 </script>
 </body>
 </html>
