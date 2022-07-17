@@ -32,6 +32,13 @@
     contents.removeAttribute('hidden');
   }
   document.body.onload = appear;//call the on load method
+
+  //2 make on click event as much as
+  function increment(){
+    document.getElementById('count').innerText++;
+  }
+  //2.1 adding the event handler
+  document.getElementById('incrementButton').onclick = increment;
 </script>
 </body>
 </html>
