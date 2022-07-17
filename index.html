@@ -19,9 +19,9 @@
     }
   </style>
 </head>
-<body>
+<body onload="appear()">
 <div class="contents" align="center" hidden>
-  <button id="incrementButton">click me :)</button>
+  <button id="incrementButton" onclick="increment()">click me :)</button>
   <h3>you have already click this button much as : <span id="count">0</span></h3>
 </div>
  
@@ -32,8 +32,8 @@
 
   //3 make hidden gift for user when them 7 times  of click button
     if (document.getElementById('count').innerText == 7) {
-      const hiddenMessage = document.createElement('h4');
-      hiddenMessage = 'Surprise !!!';
+      const hiddenMessage = document.createElement('h2');
+      hiddenMessage.innerText = 'Surprise  you got a gift from me !!!';
       const image = document.createElement('img');
       image.setAttribute('src', 'https://i.ibb.co/0V49VRZ/catto.jpg');
       const contents = document.querySelector('.contents');
@@ -46,8 +46,8 @@
     contents.removeAttribute('hidden');
   }
   //2.1 adding the event handler
-  document.getElementById('incrementButton').onclick = increment;
-  document.body.onload = appear;//call the on load method
+  // document.getElementById('incrementButton').onclick = increment;
+  // document.body.onload = appear;//call the on load method
 </script>
 </body>
 </html>
