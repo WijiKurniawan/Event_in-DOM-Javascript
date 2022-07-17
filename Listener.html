@@ -1,0 +1,58 @@
+<!-- make with event listener -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event World</title>
+  
+  <style>
+    .contents {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 2px solid black;
+      padding: 15px;
+    }
+    
+    #generateButton {
+      margin-top: 5px;
+      margin-bottom: 15px;;
+    }
+  </style>
+</head>
+<body>
+<div class="contents" align="center" hidden>
+  <button id="incrementButton">click me :)</button>
+  <h3>you have already click this button much as : <span id="count">0</span></h3>
+</div>
+ 
+<script>
+  //2 make on click event 
+  function increment(){
+    document.getElementById('count').innerText++;
+
+  //3 make hidden gift for user when them 7 times  of click button
+    if (document.getElementById('count').innerText == 7) {
+      const hiddenMessage = document.createElement('h2');
+      hiddenMessage.innerText = 'Surprise  you got a gift from me !!!';
+      const image = document.createElement('img');
+      image.setAttribute('src', 'https://i.ibb.co/0V49VRZ/catto.jpg');
+      const contents = document.querySelector('.contents');
+      contents.appendChild(hiddenMessage).appendChild(image);
+    }
+  }
+  function appear(){//1 memunculkan elemen html (appearing html content)
+    alert('Hi dude');
+    const contents = document.querySelector('.contents');
+    contents.removeAttribute('hidden');
+  }
+  //2.1 adding the event handler
+  // document.getElementById('incrementButton').onclick = increment;
+  // document.body.onload = appear;//call the on load method
+
+  // event listener start
+   window.addEventListener('load',appear);//dipasangkan dengan window karena addeventlistener tidak dapat bekerja pada body
+   document.getElementById('incrementButton').addEventListener('click',increment);
+</script>
+</body>
+</html>
