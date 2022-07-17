@@ -24,8 +24,13 @@
   <button id="incrementButton">Tekan Aku :)</button>
   <h3>Kamu sudah menekan tombol di atas sebanyak <span id="count">0</span></h3>
 </div>
-
+ 
 <script>
+  function appear(){//memunculkan elemen html (appearing html content)
+    alert('Html muncul');
+    const contents = document.querySelector('.contents');
+    contents.removeAttribute('.hidden');
+  }
 </script>
 </body>
 </html>
