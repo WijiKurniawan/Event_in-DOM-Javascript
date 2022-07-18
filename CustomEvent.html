@@ -1,0 +1,55 @@
+<!-- make custom event
+const eventCustom = new Event('ourCustomEvent');
+ meletakkannya pada sebuah method addEventListener() eng : put at method addEventListener()
+ element.addEventListener('OurCustomEvent'); 
+
+custom events allow we are to run an event handler after another event handler has finished being called. 
+example -->
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <title>Event World</title>
+  <style>
+    .buttons {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 2px solid black;
+      padding: 15px;
+    }
+    
+    .button {
+      margin: 8px;
+      height: 40px;
+    }
+  </style>
+</head>
+<body>
+<div class="buttons" align="center">
+  <h3 id="caption">Please press one of the buttons below...</h3>
+  <button class="button" id="tombol">Custom event button</button>
+</div>
+ 
+<script>
+  const changeCaption = new Event('changeCaption');//1.custon event inisialitation
+  //2.then add Event listener for make a change when the button is clicked
+  window.addEventListener('load', function () {
+    const tombol = document.getElementById('tombol');
+ 
+    tombol.addEventListener('changeCaption', customEventHandler);
+    tombol.addEventListener('click', function () {
+        tombol.dispatchEvent(changeCaption)//4. trigger the custom event
+    });
+    
+  });
+  //3 .function custom Event handler declaration 
+  function customEventHandler(ev) {
+    console.log('Event ' + ev.type + 'have run');
+    const caption = document.getElementById('caption');
+    caption.innerText = 'Anda telah membangkitkan custom event';
+  }
+</script>
+</body>
+</html>
