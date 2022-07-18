@@ -22,7 +22,7 @@
 </head>
 <body>
 <div class="contents" align="center" hidden>
-  <button id="incrementButton">click me :)</button>
+  <button id="incrementButton">click me 10 times or more !!</button>
   <h3>you have already click this button much as : <span id="count">0</span></h3>
 </div>
  
@@ -31,8 +31,8 @@
   function increment(){
     document.getElementById('count').innerText++;
 
-  //3 make hidden gift for user when them 7 times  of click button
-    if (document.getElementById('count').innerText == 7) {
+  //3 make hidden gift for user when them 10 times  of click button
+    if (document.getElementById('count').innerText == 10) {
       const hiddenMessage = document.createElement('h2');
       hiddenMessage.innerText = 'Surprise  you got a gift from me !!!';
       const image = document.createElement('img');
